@@ -1,0 +1,29 @@
+.placeholder-page {
+  min-height: 100vh;
+  padding: 180px var(--page-padding) 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--color-ivory);
+  color: var(--color-navy);
+}
+
+.placeholder-page > span {
+  margin-bottom: 25px;
+  color: var(--color-gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.placeholder-page h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(60px, 10vw, 130px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.placeholder-page p {
+  margin-top: 25px;
+  font-size: 14px;
+  opacity: 0.65;
+}

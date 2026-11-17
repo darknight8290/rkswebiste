@@ -1,0 +1,25 @@
+
+:root {
+  /* RKS BRAND COLORS */
+
+  --color-navy: #1A2642;
+  --color-gold: #C9943A;
+  --color-ivory: #F7F3EB;
+  --color-burgundy: #6B1F2A;
+  --color-soft-ivory: #F0EDE8;
+
+  /* TEXT COLORS */
+
+  --color-text: #1A2642;
+  --color-text-light: #77736C;
+
+  /* FONTS */
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Raleway", sans-serif;
+
+  /* LAYOUT */
+
+  --container-width: 1440px;
+  --page-padding: 6%;
+}
