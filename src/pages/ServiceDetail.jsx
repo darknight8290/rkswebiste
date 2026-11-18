@@ -96,7 +96,7 @@ function ServiceDetail() {
 
           <div className="service-detail-list">
             {service.coverage.map((item, index) => (
-              <div className="service-detail-list-item" key={index}>
+              <div className="service-detail-list-item" key={`${service.slug}-${item}`}>
                 <span>0{index + 1}</span>
                 <p>{item}</p>
                 <span>↗</span>

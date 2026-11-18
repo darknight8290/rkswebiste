@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+
 import CurtainIntro from "./components/CurtainIntro/CurtainIntro";
 import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
@@ -15,6 +17,7 @@ import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import Projects from "./pages/Projects";
 import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 import Career from "./pages/Career";
 
 import PlaceholderPage from "./pages/PlaceholderPage";
@@ -39,9 +42,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route path="/about" element={<About />} />
 
-          {/* SERVICES */}
           <Route path="/services" element={<Services />} />
           <Route
             path="/services/:slug"
@@ -49,16 +52,29 @@ function App() {
           />
 
           <Route path="/projects" element={<Projects />} />
+
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/blog" element={<Blog />} />
+
           <Route path="/career" element={<Career />} />
+
           <Route path="/contact" element={<Contact />} />
 
           <Route
             path="*"
-            element={<PlaceholderPage title="Page Not Found" number="404" />}
+            element={
+              <PlaceholderPage
+                title="Page Not Found"
+                number="404"
+              />
+            }
           />
         </Routes>
       </main>
+
+      {/* GLOBAL FOOTER */}
+      <Footer />
+
     </BrowserRouter>
   );
 }

@@ -1,5 +1,7 @@
+
 import "./Projects.css";
 import Reveal from "../components/Reveal/Reveal";
+import { Link } from "react-router-dom";
 
 function Projects() {
   return (
@@ -8,7 +10,9 @@ function Projects() {
       {/* PROJECTS HERO */}
       <section className="projects-hero">
         <div className="projects-hero-content">
-          <span className="projects-eyebrow">OUR EXPERIENCE</span>
+          <span className="projects-eyebrow">
+            OUR EXPERIENCE
+          </span>
 
           <h1>
             Projects &
@@ -22,7 +26,9 @@ function Projects() {
           </p>
         </div>
 
-        <span className="projects-hero-number">04 / PROJECTS</span>
+        <span className="projects-hero-number">
+          04 / PROJECTS
+        </span>
       </section>
 
       {/* PROJECTS INTRO */}
@@ -59,20 +65,29 @@ function Projects() {
         </div>
 
         <div className="projects-empty">
-          <span className="projects-empty-number">01 — 00</span>
+          <span className="projects-empty-number">
+            01 — 00
+          </span>
 
           <div className="projects-empty-content">
             <span>PROJECT SHOWCASE</span>
-            <h3>Our work will be featured here.</h3>
+
+            <h3>
+              Our work will be featured here.
+            </h3>
+
             <p>
               Project details and visual highlights will be
               added when the material is available.
             </p>
           </div>
 
-          <span className="projects-empty-mark">RKS</span>
+          <span className="projects-empty-mark">
+            RKS
+          </span>
         </div>
       </section>
+
       {/* PROJECTS CLOSING */}
       <section className="projects-closing">
         <span>BEHIND EVERY PROJECT</span>
@@ -88,11 +103,15 @@ function Projects() {
           that define Royal Kings Security.
         </p>
 
-        <a href="/about" className="projects-closing-link">
+        <Link
+          to="/about"
+          className="projects-closing-link"
+        >
           ABOUT ROYAL KINGS
           <span>↗</span>
-        </a>
+        </Link>
       </section>
+
     </main>
   );
 }

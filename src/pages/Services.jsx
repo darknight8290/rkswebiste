@@ -11,127 +11,135 @@ function Services() {
       {/* SERVICES HERO */}
       <section className="services-hero">
         <div className="services-hero-content">
-          <span className="services-eyebrow">WHAT WE DO</span>
+          <span className="services-eyebrow">
+            WHAT WE DO
+          </span>
 
           <h1>
-            Security
-            <br />
+            Security<br />
             <em>Solutions.</em>
           </h1>
 
           <p>
-            Professional security services built around
-            responsibility, safety and reliability.
+            Professional security solutions designed around
+            protection, responsibility and trust.
           </p>
         </div>
 
         <span className="services-hero-number">
-          03 / SERVICES
+          03 / OUR SERVICES
         </span>
       </section>
 
       {/* SERVICES INTRO */}
       <section className="services-intro">
         <div className="services-section-label">
-          <span>01 / OUR SERVICES</span>
-          <span>PROTECTION WITH PURPOSE</span>
+          <span>01 / OUR EXPERTISE</span>
+          <span>SECURITY WITH PURPOSE</span>
         </div>
 
         <div className="services-intro-content">
-          <h2>
-            The right approach
-            <br />
-            to <em>every responsibility.</em>
-          </h2>
+          <Reveal animation="reveal-left">
+            <h2>
+              Security with<br />
+              <em>purpose.</em>
+            </h2>
+          </Reveal>
 
-          <p>
-            Every environment has different security needs.
-            Our services focus on providing professional
-            support with a responsible approach.
-          </p>
+          <Reveal>
+            <p>
+              Professional security solutions designed around
+              protection, responsibility and trust.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* DYNAMIC SERVICES ACCORDION */}
+      {/* SERVICES ACCORDION */}
       <section className="services-list-section">
         <div className="services-section-label">
-          <span>02 / WHAT WE OFFER</span>
-          <span>OUR EXPERTISE</span>
+          <span>02 / WHAT WE PROVIDE</span>
+          <span>EXPLORE OUR SERVICES</span>
         </div>
 
         <div className="services-accordion">
           {services.map((service, index) => (
-            <Reveal key={service.slug} delay={index * 100}>
-              <Link
-                to={`/services/${service.slug}`}
-                className="service-card-link"
-              >
-                <article
-                  className={`service-card service-card-${service.theme}`}
-                >
+            <Link
+              to={`/services/${service.slug}`}
+              className={`service-accordion-card ${
+                index === 0 ? "active" : ""
+              }`}
+              key={service.slug}
+            >
+              {/* CARD IMAGE */}
+              <img
+                className="service-accordion-image"
+                src={service.image}
+                alt={service.title}
+                loading="lazy"
+              />
 
-                  {/* SERVICE BACKGROUND IMAGE */}
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="service-card-image"
-                    loading="lazy"
-                  />
+              {/* IMAGE OVERLAY */}
+              <div className="service-accordion-overlay"></div>
 
-                  {/* CARD TOP */}
-                  <div className="service-card-top">
-                    <span className="service-number">
-                      {service.number}
-                    </span>
+              {/* CARD TOP */}
+              <div className="service-accordion-top">
+                <span className="service-accordion-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
-                    <span className="service-arrow">
-                      ↗
-                    </span>
-                  </div>
+                <span className="service-accordion-arrow">
+                  ↗
+                </span>
+              </div>
 
-                  {/* CARD CONTENT */}
-                  <div className="service-card-content">
-                    <span className="service-tag">
-                      {service.tag}
-                    </span>
+              {/* COLLAPSED TITLE */}
+              <h3 className="service-accordion-vertical-title">
+                {service.title}
+              </h3>
 
-                    <h3>{service.title}</h3>
+              {/* EXPANDED CONTENT */}
+              <div className="service-accordion-content">
+                <span className="service-accordion-tag">
+                  {service.tag || "RKS SECURITY SERVICES"}
+                </span>
 
-                    <p>{service.description}</p>
+                <h3>{service.title}</h3>
 
-                    <span className="service-card-bottom">
-                      EXPLORE SERVICE ↗
-                    </span>
-                  </div>
+                <p>{service.description}</p>
 
-                </article>
-              </Link>
-            </Reveal>
+                <span className="service-accordion-explore">
+                  EXPLORE SERVICE <span>↗</span>
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
+
+        <Link to="/services" className="services-all-link">
+          EXPLORE ALL SERVICES <span>↗</span>
+        </Link>
       </section>
 
       {/* SERVICES CLOSING */}
       <section className="services-closing">
-        <span className="services-closing-label">
-          BUILT AROUND YOUR SECURITY NEEDS
-        </span>
+        <div className="services-closing-content">
+          <span>RKS / OUR COMMITMENT</span>
 
-        <h2>
-          Protection starts
-          <br />
-          with the <em>right approach.</em>
-        </h2>
+          <h2>
+            Protection<br />
+            <em>With Purpose.</em>
+          </h2>
 
-        <p>
-          Discover more about Royal Kings Security and
-          our commitment to professional security solutions.
-        </p>
+          <p>
+            Discover the values and professional approach
+            behind Royal Kings Security.
+          </p>
 
-        <Link to="/about" className="services-closing-link">
-          DISCOVER RKS
-          <span>↗</span>
-        </Link>
+          <Link to="/about" className="services-closing-link">
+            ABOUT ROYAL KINGS <span>↗</span>
+          </Link>
+        </div>
       </section>
 
     </main>

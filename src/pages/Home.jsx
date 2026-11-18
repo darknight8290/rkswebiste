@@ -23,7 +23,7 @@ const services = [
     title: "Security Guard Services",
     description:
       "Professional security personnel focused on maintaining safe and secure environments.",
-    image: "/images/security-team.jpg",
+    image: "/images/guard.jpg",
     icon: ShieldCheck,
   },
   {
@@ -86,7 +86,7 @@ const services = [
     title: "VIP Protection",
     description:
       "Professional protection arrangements tailored to individual requirements.",
-    image: "/images/professional-guards.jpg",
+    image: "/images/vip.jpg",
     icon: Users,
   },
 ];
@@ -222,10 +222,12 @@ function Home() {
                 security solutions with a focus on safety, trust and
                 reliability.
               </p>
+
               <p>
                 We believe that effective security begins with understanding
                 people, places and their individual requirements.
               </p>
+
               <Link to="/about" className="home-text-link">
                 DISCOVER OUR STORY <ArrowUpRight size={17} />
               </Link>
@@ -271,7 +273,7 @@ function Home() {
           </Reveal>
         </div>
 
-        {/* HORIZONTAL ACCORDION CARDS */}
+        {/* IMAGE SERVICE CARDS */}
         <div className="home-service-deck">
           {services.map((service) => {
             const Icon = service.icon;
@@ -280,21 +282,21 @@ function Home() {
               <Link
                 to={`/services/${service.slug}`}
                 className="home-service-playing-card"
-                key={service.number}
+                key={service.slug}
               >
                 <div className="service-card-image">
-                  <img src={service.image} alt={service.title} />
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                  />
                   <div className="service-card-overlay" />
                 </div>
 
                 <div className="service-card-content">
                   <div className="service-card-top">
                     <span>{service.number}</span>
-                    <Icon size={25} strokeWidth={1.4} />
-                  </div>
-
-                  <div className="service-card-vertical-title">
-                    {service.title}
+                    <Icon size={24} strokeWidth={1.5} />
                   </div>
 
                   <div className="service-card-details">
@@ -305,10 +307,6 @@ function Home() {
                     <h3>{service.title}</h3>
 
                     <p>{service.description}</p>
-
-                    <span className="service-card-learn">
-                      LEARN MORE <ArrowUpRight size={17} />
-                    </span>
                   </div>
                 </div>
               </Link>
@@ -357,8 +355,12 @@ function Home() {
             return (
               <Reveal key={value.number}>
                 <div className="home-value-card">
-                  <span className="home-value-number">{value.number}</span>
+                  <span className="home-value-number">
+                    {value.number}
+                  </span>
+
                   <Icon size={30} strokeWidth={1.4} />
+
                   <h3>{value.title}</h3>
                   <p>{value.description}</p>
                 </div>
@@ -402,9 +404,10 @@ function Home() {
             <Reveal key={project.title}>
               <Link to="/projects" className="home-project-card">
                 <div className="home-project-image">
-                  <img src={project.image} alt={project.title} />
+                  <img src={project.image} alt={project.title} loading="lazy" />
                   <span>0{index + 1}</span>
                 </div>
+
                 <div className="home-project-info">
                   <span>{project.category}</span>
                   <h3>{project.title}</h3>
@@ -454,15 +457,22 @@ function Home() {
             <Reveal key={article.title}>
               <Link to="/blog" className="home-blog-card">
                 <div className="home-blog-image">
-                  <img src={article.image} alt={article.category} />
+                  <img
+                    src={article.image}
+                    alt={article.category}
+                    loading="lazy"
+                  />
                 </div>
+
                 <div className="home-blog-content">
                   <div className="home-blog-meta">
                     <span>{article.category}</span>
                     <span>{article.date}</span>
                   </div>
+
                   <h3>{article.title}</h3>
                   <p>{article.description}</p>
+
                   <span className="home-blog-read">
                     READ INSIGHT <ArrowUpRight size={16} />
                   </span>
@@ -511,8 +521,13 @@ function Home() {
             <Reveal key={leader.name}>
               <article className="home-leader-card">
                 <div className="home-leader-image">
-                  <img src={leader.image} alt={leader.name} />
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    loading="lazy"
+                  />
                 </div>
+
                 <div className="home-leader-info">
                   <span>{leader.role}</span>
                   <h3>{leader.name}</h3>
@@ -548,11 +563,13 @@ function Home() {
           <Reveal>
             <div className="career-preview-description">
               <BriefcaseBusiness size={32} strokeWidth={1.3} />
+
               <p>
                 Interested in becoming part of a professional security team?
                 Explore career opportunities and learn more about working
                 with Royal Kings Security.
               </p>
+
               <Link to="/career" className="home-text-link">
                 EXPLORE CAREERS <ArrowUpRight size={17} />
               </Link>
@@ -565,15 +582,18 @@ function Home() {
       <section className="home-cta">
         <Reveal>
           <span className="home-eyebrow">LET'S TALK SECURITY</span>
+
           <h2>
             Your safety.
             <br />
             <em>Our commitment.</em>
           </h2>
+
           <p>
             Tell us about your security requirements. Let's explore a suitable
             solution together.
           </p>
+
           <Link to="/contact" className="home-cta-button">
             REQUEST A QUOTE <ArrowUpRight size={18} />
           </Link>

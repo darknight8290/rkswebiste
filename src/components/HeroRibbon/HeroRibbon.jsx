@@ -10,42 +10,42 @@ const CARDS = [
   {
     title: "Security Team",
     type: "image",
-    src: "/images/security-team.jpg",
+    src: "/images/office.jpg",
   },
   {
     title: "Corporate Security",
     type: "image",
-    src: "/images/corporate-security.jpg",
+    src: "/images/school.jpg",
   },
   {
     title: "Event Security",
     type: "image",
-    src: "/images/event-security.jpg",
+    src: "/images/event.jpg",
   },
   {
     title: "Entrance Security",
     type: "image",
-    src: "/images/entrance-security.jpg",
+    src: "/images/vip.jpg",
   },
   {
     title: "CCTV Monitoring",
     type: "image",
-    src: "/images/cctv-monitoring.jpg",
+    src: "/images/professional-guards.jpg",
   },
   {
     title: "Hotel Security",
     type: "image",
-    src: "/images/hotel-security.jpg",
+    src: "/images/security-patrol.jpg",
   },
   {
     title: "Security Patrol",
     type: "image",
-    src: "/images/security-patrol.jpg",
+    src: "/images/mall-security.jpg",
   },
   {
     title: "Professional Guards",
     type: "image",
-    src: "/images/professional-guards.jpg",
+    src: "/images/corporate-security.jpg",
   },
 ];
 

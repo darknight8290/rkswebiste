@@ -1,69 +1,161 @@
-import { ArrowUpRight, ArrowUp } from "lucide-react";
+
 import "./Footer.css";
+import { Link } from "react-router-dom";
+
+import {
+  Phone,
+  Mail,
+  MapPin,
+  ArrowUpRight,
+} from "lucide-react";
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="rks-footer">
+
+      {/* TOP BRAND ROW */}
       <div className="footer-top">
-        <div className="footer-brand">
-          <img src="/rks-logo.png" alt="RKS Royal Kings Security" />
 
-          <p>
-            Professional security solutions with a commitment to safety,
-            trust and reliability.
-          </p>
-        </div>
+        <Link to="/" className="footer-brand">
+          <img src="/rks-logo.png" alt="RKS Logo" />
 
-        <div className="footer-navigation">
-          <span className="footer-label">EXPLORE</span>
+          <div>
+            <h2>R.K.S. ROYAL KINGS SECURITY</h2>
+            <span>PROFESSIONAL SECURITY SERVICES</span>
+          </div>
+        </Link>
 
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/projects">Projects</a>
-          <a href="/blog">Blog</a>
-          <a href="/career">Career</a>
-        </div>
+        <span className="footer-brand-tag">
+          SAFETY · TRUST · RELIABILITY
+        </span>
 
-        <div className="footer-contact">
-          <span className="footer-label">GET IN TOUCH</span>
-
-          <p>
-            Have a question or want to know more about our security
-            solutions?
-          </p>
-
-          <span className="footer-contact-note">
-            Contact details will be added here.
-          </span>
-        </div>
       </div>
 
-      <div className="footer-middle">
-        <span>SAFETY</span>
-        <span className="footer-middle-dot">•</span>
-        <span>TRUST</span>
-        <span className="footer-middle-dot">•</span>
-        <span>RELIABILITY</span>
+      {/* FOOTER MAIN CONTENT */}
+      <div className="footer-main">
+
+        {/* SERVICES */}
+        <div className="footer-column">
+          <h3>Services</h3>
+
+          <ul>
+            <li>School Security</li>
+            <li>Mall Security</li>
+            <li>Hotel Security</li>
+            <li>Personal Security</li>
+            <li>Corporate Security</li>
+            <li>Event Security</li>
+          </ul>
+        </div>
+
+        {/* CONTACT INFORMATION */}
+        <div className="footer-column footer-contact">
+          <h3>Contact Information</h3>
+
+          <div className="footer-contact-item">
+            <Phone size={15} />
+
+            <div>
+              <span>Phone</span>
+
+              <a href="tel:+917073350667">
+                +91 7073350667
+              </a>
+
+              <a href="tel:+919983831205">
+                +91 9983831205
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-contact-item">
+            <Mail size={15} />
+
+            <div>
+              <span>Email</span>
+
+              <a href="mailto:Rks.royalkings@gmail.com">
+                Rks.royalkings@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* OFFICE LOCATIONS */}
+        <div className="footer-column footer-offices">
+          <h3>Office Locations</h3>
+
+          <div className="footer-office">
+            <MapPin size={15} />
+
+            <div>
+              <strong>Head Office</strong>
+
+              <p>
+                Man Ji Ka Hatta, Paota,
+                Jodhpur, Rajasthan - 342001
+              </p>
+            </div>
+          </div>
+
+          <div className="footer-office">
+            <MapPin size={15} />
+
+            <div>
+              <strong>Regional Office</strong>
+
+              <p>
+                Children's Park Road,
+                Behind Saras Cabin,
+                Sardarpura, Jodhpur,
+                Rajasthan - 342001
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* SOCIAL MEDIA */}
+        <div className="footer-column footer-social">
+          <h3>Social Media</h3>
+
+          <div className="footer-social-links">
+            <span>Facebook</span>
+
+            <span className="footer-social-icon facebook-icon">
+              f
+            </span>
+          </div>
+
+          <div className="footer-social-links">
+            <span>Instagram</span>
+
+            <span className="footer-social-icon instagram-icon">
+              ◎
+            </span>
+          </div>
+
+          <Link to="/services" className="footer-explore">
+            Explore Our Services
+            <ArrowUpRight size={15} />
+          </Link>
+        </div>
+
       </div>
 
+      {/* COPYRIGHT */}
       <div className="footer-bottom">
-        <p>
-          © {currentYear} R.K.S. Royal Kings Security. All rights reserved.
-        </p>
 
-        <button
-          className="footer-back-top"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          aria-label="Back to top"
-        >
-          BACK TO TOP <ArrowUp size={16} />
-        </button>
+        <span>
+          © {new Date().getFullYear()} Royal Kings Security.
+          All Rights Reserved.
+        </span>
 
-        <span>DESIGNED WITH PURPOSE.</span>
+        <Link to="/">
+          Back to Home ↑
+        </Link>
+
       </div>
+
     </footer>
   );
 }

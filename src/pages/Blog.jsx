@@ -1,7 +1,8 @@
+
 import "./Blog.css";
 import Reveal from "../components/Reveal/Reveal";
 import { Link } from "react-router-dom";
-
+import blogData from "../data/blogData";
 
 function Blog() {
   return (
@@ -60,47 +61,90 @@ function Blog() {
           <span>RKS JOURNAL</span>
         </div>
 
-        <div className="blog-empty">
-          <span className="blog-empty-number">JOURNAL / 001</span>
+        <div className="blog-articles-grid">
+          {blogData.map((blog, index) => (
+            <Reveal key={blog.slug} animation="reveal-up">
+              <article className="blog-card">
 
-          <div className="blog-empty-content">
-            <span>COMING SOON</span>
+                {/* IMAGE */}
+                <Link
+                  to={`/blog/${blog.slug}`}
+                  className="blog-card-image-link"
+                >
+                  <div className="blog-card-image">
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      loading="lazy"
+                    />
 
-            <h3>
-              New perspectives
-              <br />
-              will be shared here.
-            </h3>
+                    <span className="blog-card-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                </Link>
 
-            <p>
-              Articles and updates will appear here
-              when they are ready to publish.
-            </p>
-          </div>
+                {/* CONTENT */}
+                <div className="blog-card-content">
+                  <div className="blog-card-meta">
+                    <span>{blog.category}</span>
+                    <span>{blog.date}</span>
+                  </div>
 
-          <span className="blog-empty-mark">RKS</span>
+                  <h3>
+                    <Link to={`/blog/${blog.slug}`}>
+                      {blog.title}
+                    </Link>
+                  </h3>
+
+                  <p>{blog.excerpt}</p>
+
+                  <div className="blog-card-bottom">
+                    <span>{blog.readTime}</span>
+
+                    <Link
+                      to={`/blog/${blog.slug}`}
+                      className="blog-read-more"
+                    >
+                      READ ARTICLE
+                      <span>↗</span>
+                    </Link>
+                  </div>
+                </div>
+
+              </article>
+            </Reveal>
+          ))}
         </div>
       </section>
-{/* BLOG CLOSING SECTION */}
-<section className="blog-closing">
-  <div className="blog-closing-content">
-    <span className="blog-closing-label">RKS / JOURNAL</span>
 
-    <h2>
-      Stay Connected
-      <br />
-      With RKS.
-    </h2>
+      {/* BLOG CLOSING */}
+      <section className="blog-closing">
+        <div className="blog-closing-content">
+          <span className="blog-closing-label">
+            RKS / JOURNAL
+          </span>
 
-    <p>
-      Explore our services and learn more about our approach to security.
-    </p>
+          <h2>
+            Stay Connected
+            <br />
+            With RKS.
+          </h2>
 
-    <Link to="/services" className="blog-closing-button">
-      Explore Our Services
-    </Link>
-  </div>
-</section>
+          <p>
+            Explore our services and learn more about
+            our approach to security.
+          </p>
+
+          <Link
+            to="/services"
+            className="blog-closing-button"
+          >
+            Explore Our Services
+          </Link>
+        </div>
+      </section>
+
     </main>
   );
 }
